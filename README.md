@@ -166,3 +166,41 @@ level: high
 ## Project Status
 
 - Active SOC detection engineering learning project focused on web attack monitoring and suspicious HTTP activity detection.
+
+---
+
+## Screenshots
+
+### SQL Injection Detection
+
+![SQL Injection Detection](screenshots/sql_injection_detection.png)
+
+---
+
+### XSS Detection
+
+![XSS Detection](screenshots/xss_detection.png)
+
+---
+
+### Directory Traversal Detection
+
+![Directory Traversal Detection](screenshots/directory_traversal_detection.png)
+
+---
+
+### Suspicious User-Agent Hunting
+
+![Suspicious User-Agent Hunting](screenshots/suspicious_user_agent_hunt.png)
+
+---
+
+### HTTP Error Monitoring
+
+![HTTP Error Monitoring](screenshots/http_error_monitoring.png)
+
+---
+
+### Authentication Monitoring
+
+![Authentication Monitoring](screenshots/authentication_monitoring.png)
