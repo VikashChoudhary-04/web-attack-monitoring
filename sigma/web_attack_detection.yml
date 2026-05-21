@@ -1,0 +1,57 @@
+title: Suspicious Web Attack Activity Detection
+
+id: 33333333-3333-3333-3333-333333333333
+
+status: experimental
+
+description: Detects common web attack patterns including SQL Injection, XSS, and directory traversal attempts.
+
+references:
+  - https://attack.mitre.org/techniques/T1190/
+  - https://owasp.org/www-community/attacks/
+
+author: Vikash Choudhary
+
+date: 2026/05/21
+
+logsource:
+  category: webserver
+
+detection:
+
+  sqli_selection:
+    cs-uri-query|contains:
+      - "UNION SELECT"
+      - "' OR 1=1"
+      - "SELECT * FROM"
+      - "DROP TABLE"
+
+  xss_selection:
+    cs-uri-query|contains:
+      - "<script>"
+      - "javascript:"
+      - "onerror="
+      - "alert("
+
+  traversal_selection:
+    cs-uri-query|contains:
+      - "../"
+      - "..\\"
+      - "/etc/passwd"
+
+  condition: sqli_selection or xss_selection or traversal_selection
+
+falsepositives:
+  - Security testing
+  - Vulnerability scans
+  - Developer testing
+  - Web application debugging
+
+level: high
+
+tags:
+  - attack.initial_access
+  - attack.t1190
+  - attack.execution
+  - attack.t1059
+  - attack.reconnaissance
